@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {
   SuiClientProvider,
@@ -6,7 +5,7 @@ import {
   ConnectButton,
   useWallet,
 } from '@mysten/dapp-kit';
-import { SuiClient, getFullnodeUrl } from '@mysten/sui';
+import { SuiClient, getFullnodeUrl } from '@mysten/sui/client'; // ✅ الاستيراد الصحيح لمكتبة sui
 
 const client = new SuiClient({ url: getFullnodeUrl('mainnet') });
 
