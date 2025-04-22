@@ -3,21 +3,24 @@ import {
   SuiClientProvider,
   WalletProvider,
   ConnectButton,
-  useWallet,
+  WalletStatus,
+  useCurrentAccount,
+  useCurrentWallet,
 } from '@mysten/dapp-kit';
-import { SuiClient, getFullnodeUrl } from '@mysten/sui/client'; // ✅ الاستيراد الصحيح لمكتبة sui
+import { SuiClient, getFullnodeUrl } from '@mysten/sui/client';
 
 const client = new SuiClient({ url: getFullnodeUrl('mainnet') });
 
 function WalletInfo() {
-  const { currentWallet, currentAccount } = useWallet();
+  const account = useCurrentAccount();
+  const wallet = useCurrentWallet();
 
-  if (!currentWallet || !currentAccount) return null;
+  if (!account || !wallet) return null;
 
   return (
     <div style={{ marginTop: '20px' }}>
-      <p><strong>Connected Wallet:</strong> {currentWallet.name}</p>
-      <p><strong>Address:</strong> {currentAccount.address}</p>
+      <p><strong>Connected Wallet:</strong> {wallet.name}</p>
+      <p><strong>Address:</strong> {account.address}</p>
     </div>
   );
 }
@@ -29,6 +32,7 @@ export default function App() {
         <div style={{ textAlign: 'center', marginTop: '100px' }}>
           <h1>Connect Sui Wallet (Dapp Kit)</h1>
           <ConnectButton />
+          <WalletStatus />
           <WalletInfo />
         </div>
       </WalletProvider>
