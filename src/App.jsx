@@ -6,7 +6,7 @@ import {
   ConnectButton,
   useWallet,
 } from '@mysten/dapp-kit';
-import { SuiClient, getFullnodeUrl } from '@mysten/sui.js'; // ✅ هذا هو التعديل الصحيح
+import { SuiClient, getFullnodeUrl } from '@mysten/sui.js'; // ✅ هذا هو الاستيراد الصحيح أخيرًا
 
 const client = new SuiClient({ url: getFullnodeUrl('mainnet') });
 
