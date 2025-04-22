@@ -1,4 +1,3 @@
-
 {
   "name": "sui-dappkit-final-actually-fixed",
   "version": "1.0.0",
@@ -9,10 +8,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@mysten/dapp-kit": "latest",
-    "@mysten/sui.js": "latest",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "@mysten/dapp-kit": "^0.8.6",
+    "@mysten/sui": "^0.54.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",
