@@ -3,7 +3,6 @@ import {
   SuiClientProvider,
   WalletProvider,
   ConnectButton,
-  WalletStatus,
   useCurrentAccount,
   useCurrentWallet,
 } from '@mysten/dapp-kit';
@@ -32,7 +31,6 @@ export default function App() {
         <div style={{ textAlign: 'center', marginTop: '100px' }}>
           <h1>Connect Sui Wallet (Dapp Kit)</h1>
           <ConnectButton />
-          <WalletStatus />
           <WalletInfo />
         </div>
       </WalletProvider>
