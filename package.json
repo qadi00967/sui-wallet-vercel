@@ -1,6 +1,6 @@
 
 {
-  "name": "sui-wallet-vercel",
+  "name": "sui-dappkit-vercel",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@mysten/wallet-kit": "latest",
+    "@mysten/dapp-kit": "latest",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
