@@ -6,7 +6,7 @@ import {
   ConnectButton,
   useWallet,
 } from '@mysten/dapp-kit';
-import { SuiClient, getFullnodeUrl } from '@mysten/sui.js/client';
+import { SuiClient, getFullnodeUrl } from '@mysten/sui.js';
 
 const client = new SuiClient({ url: getFullnodeUrl('mainnet') });
 
