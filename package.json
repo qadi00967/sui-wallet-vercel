@@ -1,6 +1,6 @@
 
 {
-  "name": "sui-dappkit-vercel",
+  "name": "sui-dappkit-vercel-fixed",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@mysten/dapp-kit": "latest",
+    "@mysten/sui.js": "latest",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
