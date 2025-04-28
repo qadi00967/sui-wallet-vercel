@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   createNetworkConfig,
   SuiClientProvider,
@@ -22,8 +22,28 @@ const queryClient = new QueryClient();
 function WalletInfo() {
   const account = useCurrentAccount();
   const wallet = useCurrentWallet();
+  const [errorMessage, setErrorMessage] = useState(null);
 
-  if (!account || !wallet) return null;
+  useEffect(() => {
+    if (wallet?.connectingError) {
+      console.error('Wallet connection error:', wallet.connectingError);
+      setErrorMessage("فشل الاتصال بالمحفظة، تأكد أن محفظتك مثبتة وتعمل بشكل صحيح. ❌");
+    } else {
+      setErrorMessage(null);
+    }
+  }, [wallet?.connectingError]);
+
+  if (!account || !wallet) {
+    return (
+      <>
+        {errorMessage && (
+          <div style={{ color: 'red', marginTop: '20px' }}>
+            {errorMessage}
+          </div>
+        )}
+      </>
+    );
+  }
 
   return (
     <div style={{ marginTop: '20px' }}>
